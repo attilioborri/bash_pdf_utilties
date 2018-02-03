@@ -1,0 +1,6 @@
+#!/bin/bash
+for f in *.m4a
+do
+    name=`echo "$f" | sed -e "s/.m4a$//g"`
+    ffmpeg -i "$f" -vn -ar 44100 -ac 2 -ab 320k -f mp3 "$name.mp3"
+done

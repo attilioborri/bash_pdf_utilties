@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Open List.txt
+cat List.txt | while read line; do 
+	youtube-dl -f 140 $line # Download audio (m4a)
+done
+
+
+# Convert M4A to MP3
+for f in *.m4a
+do
+    name=`echo "$f" | sed -e "s/.m4a$//g"`
+    ffmpeg -i "$f" -vn -ar 44100 -ac 2 -ab 128k -f mp3 "$name.mp3"
+done
+
+# Delete temp files
+rm *.m4a
