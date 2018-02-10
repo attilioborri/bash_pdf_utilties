@@ -1,15 +1,15 @@
 #!/bin/bash
 if [$# -ne 2] then
-	echo "Wrong param number";
+	echo "Wrong param number"
 else
-   fext = `$1`;
-	fsize = `$2`;
+   fext = `$1`
+	fsize = `$2`
 
 	for f in *.$fext
 	do
-		name=`echo "$f" | sed -e "s/.JPG$//g"`;
-		convert "$f" -resize $fsize "$name.jpg";
+		name=`echo "$f" | sed -e "s/.JPG$//g"`
+		convert "$f" -resize $fsize "$name.jpg"
 	done
-	rm *.$fext;
+	rm *.$fext
 fi
 
