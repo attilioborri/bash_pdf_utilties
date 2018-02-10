@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ext = `$1`
+size = `$2`
+
+for f in *.$ext
+do
+	name=`echo "$f" | sed -e "s/.JPG$//g"`
+	convert "$f" -resize $size "$name.jpg"
+done
+rm *.$ext
