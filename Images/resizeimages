@@ -1,5 +1,7 @@
 #!/bin/bash
-if [$# -e 2]; then
+if [$# -ne 2] then
+	echo "Wrong param number";
+else
    fext = `$1`;
 	fsize = `$2`;
 
