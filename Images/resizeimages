@@ -3,8 +3,8 @@
 if [ "$#" -ne 2 ]; then
     echo "You must enter exactly 2 command line arguments"
 else
-	fext = `$1`
-	fsize = `$2`
+	$fext = `$1`
+	$fsize = `$2`
 
 	for f in *.$fext
 	do
