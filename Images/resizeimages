@@ -1,8 +1,6 @@
 #!/bin/bash
-if [$# -ne 3]; then
-   echo "illegal number of parameters";
-else
-	fext = `$1`;
+if [$# -e 2]; then
+   fext = `$1`;
 	fsize = `$2`;
 
 	for f in *.$fext
