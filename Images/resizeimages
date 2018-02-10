@@ -1,5 +1,5 @@
 #!/bin/bash
-if [$# -ne 2]; then
+if [$# -ne 3]; then
    echo "illegal number of parameters"
 else
 	fext = `$1`
