@@ -1,5 +1,6 @@
 #!/bin/bash
-if [$# -ne 2] then
+if [$# -ne 2] 
+then
 	echo "Wrong param number"
 else
    fext = `$1`
