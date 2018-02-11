@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$#" -ne 2 ]; then
+if [ "$#" -lt 2 ]; then
     echo "You must enter exactly 2 command line arguments"
 else
 	fext=`echo "$1"`
@@ -8,7 +8,10 @@ else
 	for f in *.$fext
 	do
 		name=`echo "$f" | sed -e "s/.JPG$//g"`
-		convert "$f" -resize $fsize "$name.jpg"
+		case "$#" in
+		2)	convert "$f" -resize $fsize "$name.jpg";;
+		3)	convert "$f" -resize $fsize "$name.jpg" -quality "$3";;
+		esac
 	done
 	rm *.$fext
 fi
