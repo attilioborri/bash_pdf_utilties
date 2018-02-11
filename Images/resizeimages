@@ -1,10 +1,9 @@
 #!/bin/bash
-#!/bin/bash
 if [ "$#" -ne 2 ]; then
     echo "You must enter exactly 2 command line arguments"
 else
-	fext = `echo "$1"`
-	fsize = `echo "$2"`
+	fext=`echo "$1"`
+	fsize=`echo "$2"`
 
 	for f in *.$fext
 	do

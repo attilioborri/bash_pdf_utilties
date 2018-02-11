@@ -2,6 +2,6 @@
 #
 #	Install All Scripts
 
-cp AudioCovnersion/* ~/bin
+cp AudioConversion/* ~/bin
 cp Images/* ~/bin
 cp YouTube/* ~/bin
