@@ -1,6 +1,9 @@
 #!/bin/bash
 if [ "$#" -lt 2 ]; then
-    echo "You must enter exactly 2 command line arguments"
+    echo "You must enter 2 or 3 arguments"
+	echo "1) Extension"
+	echo "2) Width"
+	echo "3) Quality"
 else
 	fext=`echo "$1"`
 	fsize=`echo "$2"`
@@ -10,7 +13,7 @@ else
 		name=`echo "$f" | sed -e "s/.JPG$//g"`
 		case "$#" in
 		2)	convert "$f" -resize $fsize "$name.jpg";;
-		3)	convert "$f" -resize $fsize "$name.jpg" -quality "$3";;
+		3)	convert "$f" -resize $fsize  -quality "$3" "$name.jpg";;
 		esac
 	done
 	rm *.$fext
