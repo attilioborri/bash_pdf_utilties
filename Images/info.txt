@@ -1,0 +1,7 @@
+HOW TO TRIM AUTOMATICALLY A SCANNED PAGE:
+
+convert -trim -fuzz <value>%
+
+Example
+
+convert -trim -fuzz 37% IMG1234.JPG IMG1234_trim.JPG
